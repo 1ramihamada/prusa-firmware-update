@@ -81,5 +81,6 @@ avrdude -v -p atmega2560 -c wiring -P /dev/ttyACM0 -b 115200 -D -U flash:w:build
 - Verify all dependencies are correctly installed
 
 ## Additional Resources
+- [Einsy RAMBo (MK3/S/+) Board Specifications](https://www.prusa3d.com/product/einsy-rambo-mk3-s/)
 - [Prusa Firmware GitHub Repository](https://github.com/prusa3d/Prusa-Firmware)
 - [Prusa Firmware Documentation](https://github.com/prusa3d/Prusa-Firmware/blob/MK3/README.md)
