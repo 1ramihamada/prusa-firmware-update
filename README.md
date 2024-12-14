@@ -51,6 +51,14 @@ After a successful build, the compiled `.hex` file will be located in:
 ```bash
 build/build_gen/MK3S/MK3S_MULTILANG.hex
 ```
+## Cleaning and Rebuilding
+If you make further changes to the firmware, clean and rebuild:
+
+```bash
+cd ~/Prusa-Firmware/build
+ninja clean
+ninja
+```
 
 ## Flash the Firmware
 Upload the compiled firmware to your Prusa i3 MK3S:
@@ -66,15 +74,6 @@ avrdude -v -p atmega2560 -c wiring -P /dev/ttyACM0 -b 115200 -D -U flash:w:build
 - `-b 115200`: Sets the baud rate.
 - `-D`: Prevents erasing the chip before programming.
 - `-U flash`:w:<file>:i: Writes the .hex file to the microcontroller.
-
-## Cleaning and Rebuilding
-If you make further changes to the firmware, clean and rebuild:
-
-```bash
-cd ~/Prusa-Firmware/build
-ninja clean
-ninja
-```
 
 ## Troubleshooting
 - Ensure you have the correct USB cables and drivers installed
