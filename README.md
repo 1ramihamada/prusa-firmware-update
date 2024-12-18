@@ -43,7 +43,9 @@ cd build
 ```
 2. Compile the firmware using CMake and Ninja:
 ```bash
+cd Prusa-Firmware
 cmake .. -G Ninja -DCMAKE_BUILD_TYPE=Release -DCMAKE_TOOLCHAIN_FILE=../cmake/AvrGcc.cmake -DFW_VARIANTS=MK3S
+cd build
 ninja
 ```
 3. Build Output
@@ -57,14 +59,13 @@ If you make further changes to the firmware, clean and rebuild:
 ```bash
 cd ~/Prusa-Firmware/build
 ninja clean
-ninja
 ```
 
 ## Flash the Firmware
 Upload the compiled firmware to your Prusa i3 MK3S:
 
 ```bash
-avrdude -v -p atmega2560 -c wiring -P /dev/ttyACM0 -b 115200 -D -U flash:w:build/build_gen/MK3S/MK3S_MULTILANG.hex:i
+avrdude -v -p atmega2560 -c wiring -P /dev/ttyACM0 -b 115200 -D -U flash:w:/home/rami/Prusa-Firmware/build/build_gen/MK3S/MK3S_MULTILANG.hex:i
 ```
 
 - `-v`: Enables verbose output.
