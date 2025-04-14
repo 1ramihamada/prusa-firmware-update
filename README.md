@@ -76,6 +76,12 @@ avrdude -v -p atmega2560 -c wiring -P /dev/ttyACM0 -b 115200 -D -U flash:w:/home
 - `-D`: Prevents erasing the chip before programming.
 - `-U flash`:w:<file>:i: Writes the .hex file to the microcontroller.
 
+## Disabling Thermal Anomaly Errors
+Comment out these lines:
+- #define THERMAL_MODEL 1
+- #define THERMAL_MODEL_DEBUG 1
+- #define THERMAL_MODEL_DEFAULT E3D_V6
+
 ## Troubleshooting
 - Ensure you have the correct USB cables and drivers installed
 - Check that you have the latest version of the firmware repository
