@@ -65,6 +65,7 @@ ninja clean
 Upload the compiled firmware to your Prusa i3 MK3S:
 
 ```bash
+cd ~/Prusa-Firmware/build/build_gen/MK3S
 avrdude -v -p atmega2560 -c wiring -P /dev/ttyACM0 -b 115200 -D -U flash:w:/home/rami/Prusa-Firmware/build/build_gen/MK3S/MK3S_MULTILANG.hex:i
 ```
 
